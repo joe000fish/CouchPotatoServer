@@ -108,8 +108,14 @@ class FanartTV(MovieProvider):
         image_urls = []
         pool = []
         for image in images:
-            if image.get('lang') == 'en':
+            if image.get('lang') == 'fr':
                 pool.append(image)
+
+        if len(pool) == 0:
+            for image in images:
+                if image.get('lang') == 'en':
+                    pool.append(image)
+
         orig_pool_size = len(pool)
 
         while len(pool) > 0 and (n < 0 or orig_pool_size - len(pool) < n):
