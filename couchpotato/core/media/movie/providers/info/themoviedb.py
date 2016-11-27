@@ -240,6 +240,7 @@ class TheMovieDb(MovieProvider):
         params = dict((k, v) for k, v in params.items() if v)
         params = tryUrlencode(params)
 
+
         try:
             url = 'https://api.themoviedb.org/3/%s?language=fr&api_key=%s%s' % (call, self.getApiKey(), '&%s' % params if params else '')
             data = self.getJsonData(url, show_error = False)
