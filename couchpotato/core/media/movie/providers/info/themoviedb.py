@@ -120,8 +120,7 @@ class TheMovieDb(MovieProvider):
 
         # Do request, append other items
         movie = self.request('movie/%s' % movie.get('id'), {
-            'append_to_response': 'alternative_titles' + (',images,casts' if extended else ''),
-            'language': 'en'
+            'append_to_response': 'alternative_titles' + (',images,casts' if extended else '')
         })
         if not movie:
             return
@@ -269,7 +268,7 @@ class TheMovieDb(MovieProvider):
         if len(languages):
             return languages
 
-        return [ 'en' ]
+        return [ 'fr' ]
 
     def getTitles(self, movie):
         # add the title to the list
