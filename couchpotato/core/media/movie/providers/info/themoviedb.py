@@ -28,7 +28,7 @@ class TheMovieDb(MovieProvider):
     ak = ['ZjdmNTE3NzU4NzdlMGJiNjcwMzUyMDk1MmIzYzc4NDA=', 'ZTIyNGZlNGYzZmVjNWY3YjU1NzA2NDFmN2NkM2RmM2E=',
           'YTNkYzExMWU2NjEwNWY2Mzg3ZTk5MzkzODEzYWU0ZDU=', 'ZjZiZDY4N2ZmYTYzY2QyODJiNmZmMmM2ODc3ZjI2Njk=']
 
-    languages = [ 'fr' ]
+    languages = [ 'fr', 'en' ]
     default_language = 'fr'
 
     def __init__(self):
@@ -54,7 +54,8 @@ class TheMovieDb(MovieProvider):
             languages.remove('en')
 
         # default language has a special management
-        languages.remove(self.default_language)
+        if self.default_language in languages:
+            languages.remove(self.default_language)
 
         self.languages = languages
 
