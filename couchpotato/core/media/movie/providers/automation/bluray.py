@@ -17,8 +17,8 @@ class Bluray(Automation, RSS):
 
     interval = 1800
     rss_url = 'http://www.blu-ray.com/rss/newreleasesfeed.xml'
-    backlog_url = 'http://www.blu-ray.com/movies/movies.php?show=newreleases&page=%s'
-    display_url = 'http://www.blu-ray.com/movies/movies.php?show=newreleases'
+    backlog_url = 'http://www.blu-ray.com/movies/movies.php?show=newreleases&country=fr&page=%s'
+    display_url = 'http://www.blu-ray.com/movies/movies.php?show=newreleases&country=fr'
     chart_order = 1
 
     def getIMDBids(self):
@@ -179,7 +179,7 @@ config = [{
             'list': 'charts_providers',
             'name': 'bluray_charts_display',
             'label': 'Blu-ray.com',
-            'description': 'Display <a href="http://www.blu-ray.com/movies/movies.php?show=newreleases" target="_blank">new releases</a> from Blu-ray.com',
+            'description': 'Display <a href="http://www.blu-ray.com/movies/movies.php?show=newreleases&country=fr" target="_blank">new releases</a> from Blu-ray.com',
             'options': [
                 {
                     'name': 'chart_display_enabled',
